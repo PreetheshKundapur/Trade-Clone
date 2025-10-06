@@ -1,0 +1,7 @@
+# Node dependencies
+node_modules/
+
+# Frontend cache
+frontend/dashboard/node_modules/.cache/
+frontend/node_modules
+backend/node_modules
