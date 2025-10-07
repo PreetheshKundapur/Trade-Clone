@@ -1,11 +1,13 @@
-import { Router } from "express";
-import { addToHistory, getUserHistory, login, register } from "../controllers/user.controllers.js";
+const express = require("express");
+const { Signup, Login } = require("../Controllers/AuthController");
 
+const router = express.Router();
 
-const router = Router();
-router.route("/login").post(login)
-router.route("/register").post(register)
-router.route("/add_to_activity").post(addToHistory)
-router.route("/get_all_activity").get(getUserHistory)
+// -------------------- AUTH ROUTES --------------------
+// Register a new user
+router.post("/register", Signup);
 
-export default router;
+// Login an existing user
+router.post("/login", Login);
+
+module.exports = router;
