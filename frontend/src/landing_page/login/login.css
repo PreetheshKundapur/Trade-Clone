@@ -1,0 +1,106 @@
+/* Full page body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f2eb; /* classy soft blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Wrapper for login box to allow spacing for header/footer */
+.login_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px 0; /* space for header/footer */
+  min-height: calc(100vh - 100px); /* adjust if you have header/footer */
+}
+
+/* Login box container */
+.login_container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.login_container h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Labels for inputs */
+.login_container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Input fields */
+.login_container input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login_container input:focus {
+  border-color: #0072ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+}
+
+/* Button styling */
+.login_container button {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #0072ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login_container button:hover {
+  background-color: #005fd3;
+}
+
+/* Paragraph for signup link */
+.login_container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Links */
+.login_container a {
+  color: #0072ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login_container a:hover {
+  text-decoration: underline;
+}
+
+/* Toast container adjustments if needed */
+.Toastify__toast {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}

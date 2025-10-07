@@ -16,12 +16,12 @@ code {
 }
 
 #superHero{
-  background-color: rgb(56, 126, 209);
-  color: white;
+  background-color: rgb(245, 240, 223);
+  color: rgb(39, 142, 220);
 }
 
 #superHero a{
-  color: white;
+  color: rgb(39, 142, 220);
 }
 
 #supportWrapper{

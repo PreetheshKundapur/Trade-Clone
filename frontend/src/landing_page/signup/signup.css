@@ -1,77 +1,95 @@
+/* Keep the body natural for navbar */
 body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", sans-serif;
   background-color: #f2f5f9;
+  
+}
+
+/* Wrapper just for the signup form */
+.signup-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  padding: 2rem 1rem; /* spacing from top and bottom */
+  min-height: calc(100vh - 60px); /* 60px if navbar height */
+  box-sizing: border-box;
 }
 
+/* Signup form box */
 .form_container {
   background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* Remaining styles same as before */
 .form_container h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   color: #333;
+  font-size: 1.8rem;
 }
 
 .form_container label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #444;
-  font-size: 0.9rem;
+  color: #555;
+  font-size: 0.95rem;
   text-align: left;
 }
 
 .form_container input {
   width: 100%;
-  padding: 0.7rem;
-  margin-bottom: 1rem;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form_container input:focus {
   border-color: #0072ff;
   outline: none;
+  box-shadow: 0 0 6px rgba(0, 114, 255, 0.4);
 }
 
 .form_container button {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.9rem;
   background-color: #0072ff;
   color: #fff;
   font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .form_container button:hover {
   background-color: #005fd3;
+  transform: translateY(-1px);
 }
 
 .form_container span {
   display: block;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   font-size: 0.9rem;
+  color: #555;
 }
 
 .form_container a {
   color: #0072ff;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .form_container a:hover {

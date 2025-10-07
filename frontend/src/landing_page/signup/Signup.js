@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './signup.css';
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -21,20 +22,15 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const { data } = await axios.post(
         "http://localhost:3002/api/user/register",
         { email, username, password },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
+        { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
-
       if (data.success) {
         toast.success(data.message);
-        setTimeout(() => navigate("/login"), 1000); // redirect to login
+        setTimeout(() => navigate("/login"), 1000);
       } else {
         toast.error(data.message || "Signup failed");
       }
@@ -47,44 +43,47 @@ const Signup = () => {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "auto", padding: 20 }}>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={handleOnChange}
-          required
-          style={{ display: "block", width: "100%", marginBottom: 10 }}
-        />
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={username}
-          onChange={handleOnChange}
-          required
-          style={{ display: "block", width: "100%", marginBottom: 10 }}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={handleOnChange}
-          required
-          style={{ display: "block", width: "100%", marginBottom: 10 }}
-        />
-        <button type="submit" style={{ width: "100%" }}>
-          Sign Up
-        </button>
-      </form>
-      <p style={{ marginTop: 10 }}>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
-      <ToastContainer position="bottom-right" />
+    <div className="signup-wrapper">
+      <div className="form_container">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleOnChange}
+            required
+          />
+
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={username}
+            onChange={handleOnChange}
+            required
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={handleOnChange}
+            required
+          />
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <span>
+          Already have an account? <Link to="/login">Login</Link>
+        </span>
+        <ToastContainer position="bottom-right" />
+      </div>
     </div>
   );
 };

@@ -20,7 +20,7 @@ function ProductPage() {
       <Rightsection
         imageURL="Media/console.png"
         productName="Console"
-        productDesription="The central dashboard for your Zerodha account. 
+        productDesription="The central dashboard for your Trade-Easy account. 
         Gain insights into your trades and investments with in-depth reports and visualisations."
         learnMore=""
       />
@@ -55,7 +55,7 @@ function ProductPage() {
         appStore=""
       />
 
-      <h3 className="text-center text-muted mb-5">Want to know more about our technology stack? Check out the Zerodha.tech blog.</h3>
+      <h3 className="text-center text-muted mb-5">Want to know more about our technology stack? Check out the Trade-Easy.tech blog.</h3>
 
       <Univers />
     </>

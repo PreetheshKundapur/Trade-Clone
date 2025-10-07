@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './login.css';
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -48,35 +49,33 @@ const Login = () => {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "auto", padding: 20 }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={handleOnChange}
-          required
-          style={{ display: "block", width: "100%", marginBottom: 10 }}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={handleOnChange}
-          required
-          style={{ display: "block", width: "100%", marginBottom: 10 }}
-        />
-        <button type="submit" style={{ width: "100%" }}>
-          Login
-        </button>
-      </form>
-      <p style={{ marginTop: 10 }}>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
-      </p>
-      <ToastContainer position="bottom-right" />
+    <div className="login_wrapper">
+      <div className="login_container">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleOnChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={handleOnChange}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+        <ToastContainer position="bottom-right" />
+      </div>
     </div>
   );
 };

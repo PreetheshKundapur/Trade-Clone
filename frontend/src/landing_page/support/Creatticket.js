@@ -21,7 +21,7 @@ function Creatticket() {
     </h4>
 </div>
 <div className='col-4 p-5 mt-2'>
-     <h4><i class="fa fa-user-o" aria-hidden="true"></i>  Your Zerodha Account</h4>
+     <h4><i class="fa fa-user-o" aria-hidden="true"></i>  Your Trade-Easy Account</h4>
     <h4>
         <a href=''style={{textDecoration:"none",lineHeight:"2.5"}}>Resident individual</a>
         <b/>

@@ -3,7 +3,7 @@ function univers() {
   return (
     <div className="container">
       <div className="row text-center">
-        <h1>The Zerodha Universe</h1>
+        <h1>The Trade-Easy Universe</h1>
         <p className="text-muted mt-5">
           Extend your trading and investment experience even further with our
           partner platforms
