@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "https://trade-clone-4.onrender.com",
+        "https://trade-clone-4.onrender.com/api/user/login",
         { email, password },
         {
           withCredentials: true,
