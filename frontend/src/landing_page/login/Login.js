@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import './login.css';
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './login.css'; // Your CSS file
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,19 +22,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const API_BASE_URL =
-      process.env.NODE_ENV === "production"
-        ? process.env.REACT_APP_API_URL
-        : "http://localhost:3002";
-
-    const DASHBOARD_URL =
-      process.env.NODE_ENV === "production"
-        ? process.env.REACT_APP_DASHBOARD_URL
-        : "http://localhost:3000"; // fallback for local
-
     try {
       const { data } = await axios.post(
-        `${API_BASE_URL}/api/user/login`,
+        "http://trade-clone-z5ue.vercel.app/api/user/login", // Change this to your deployed backend URL later
         { email, password },
         {
           withCredentials: true,
@@ -44,8 +34,10 @@ const Login = () => {
 
       if (data.success) {
         toast.success(data.message);
+
+        // Navigate to merged dashboard component
         setTimeout(() => {
-          window.location.href = DASHBOARD_URL;
+          navigate("/dashboard"); // Adjust this route to your Dashboard route
         }, 1000);
       } else {
         toast.error(data.message || "Login failed");
@@ -63,6 +55,7 @@ const Login = () => {
       <div className="login_container">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
+          <label>Email</label>
           <input
             type="email"
             name="email"
@@ -71,6 +64,8 @@ const Login = () => {
             onChange={handleOnChange}
             required
           />
+
+          <label>Password</label>
           <input
             type="password"
             name="password"
@@ -79,13 +74,14 @@ const Login = () => {
             onChange={handleOnChange}
             required
           />
+
           <button type="submit">Login</button>
         </form>
         <p>
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
-        <ToastContainer position="bottom-right" />
       </div>
+      <ToastContainer position="bottom-right" />
     </div>
   );
 };

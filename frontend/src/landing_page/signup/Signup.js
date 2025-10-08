@@ -22,19 +22,12 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const API_BASE_URL =
-      process.env.NODE_ENV === "production"
-        ? process.env.REACT_APP_API_URL
-        : "http://localhost:3002";
-
     try {
       const { data } = await axios.post(
-        `${API_BASE_URL}/api/user/register`,
+        "https://trade-clone-4.onrender.com/api/user/register",
         { email, username, password },
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
-
       if (data.success) {
         toast.success(data.message);
         setTimeout(() => navigate("/login"), 1000);
@@ -63,6 +56,7 @@ const Signup = () => {
             onChange={handleOnChange}
             required
           />
+
           <label>Username</label>
           <input
             type="text"
@@ -72,6 +66,7 @@ const Signup = () => {
             onChange={handleOnChange}
             required
           />
+
           <label>Password</label>
           <input
             type="password"
@@ -81,6 +76,7 @@ const Signup = () => {
             onChange={handleOnChange}
             required
           />
+
           <button type="submit">Sign Up</button>
         </form>
         <span>
