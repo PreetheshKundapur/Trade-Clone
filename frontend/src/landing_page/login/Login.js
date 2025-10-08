@@ -22,9 +22,19 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const API_BASE_URL =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_API_URL
+        : "http://localhost:3002";
+
+    const DASHBOARD_URL =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_DASHBOARD_URL
+        : "http://localhost:3000"; // fallback for local
+
     try {
       const { data } = await axios.post(
-        "https://trade-clone-4.onrender.com/api/user/login",
+        `${API_BASE_URL}/api/user/login`,
         { email, password },
         {
           withCredentials: true,
@@ -35,7 +45,7 @@ const Login = () => {
       if (data.success) {
         toast.success(data.message);
         setTimeout(() => {
-          window.location.href = "http://trade-clone-z5ue.vercel.app"; // dashboard URL
+          window.location.href = DASHBOARD_URL;
         }, 1000);
       } else {
         toast.error(data.message || "Login failed");
