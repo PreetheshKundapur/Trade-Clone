@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/api/user/login",
+        "https://trade-clone-4.onrender.com",
         { email, password },
         {
           withCredentials: true,
@@ -35,7 +35,7 @@ const Login = () => {
       if (data.success) {
         toast.success(data.message);
         setTimeout(() => {
-          window.location.href = "http://localhost:3001"; // dashboard URL
+          window.location.href = "http://trade-clone-z5ue.vercel.app"; // dashboard URL
         }, 1000);
       } else {
         toast.error(data.message || "Login failed");
