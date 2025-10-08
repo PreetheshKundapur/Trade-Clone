@@ -20,7 +20,7 @@ const MONGO_URI = process.env.MONGO_URL;
 
 // -------------------- MIDDLEWARE --------------------
 app.use(cors({
-  origin: ["http://trade-clone-kfyi-6gxqi6iem-preethesh-pks-projects.vercel.app", "http://trade-clone-z5ue.vercel.app"], // frontend + dashboard
+  origin: ["https://trade-clone-easy.vercel.app", "http://trade-clone-z5ue.vercel.app"], // frontend + dashboard
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // allow cookies
 }));
