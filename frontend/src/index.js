@@ -32,7 +32,7 @@ root.render(
   <Route path='/support'element={<Supportpage/>}  />
  
      <Route path="/login" element={<Login />} />
-    
+      
 
   <Route path='/*'element={<NotFound/>}  />
 

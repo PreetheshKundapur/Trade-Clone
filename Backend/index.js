@@ -20,7 +20,7 @@ const MONGO_URI = process.env.MONGO_URL;
 
 // -------------------- MIDDLEWARE --------------------
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"], // frontend + dashboard
+  origin: ["http://localhost:3000", "http://trade-clone-npyh-mfdn6snas-preethesh-pks-projects.vercel.app"], // frontend + dashboard
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // allow cookies
 }));
@@ -71,9 +71,9 @@ app.post("/newOrder", async (req, res) => {
 // -------------------- DATABASE CONNECTION & SERVER --------------------
 mongoose.connect(MONGO_URI)
   .then(() => {
-    console.log("✅ MongoDB connected");
-    app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+    console.log(" MongoDB connected");
+    app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
   })
   .catch((err) => {
-    console.error("❌ MongoDB connection error:", err);
+    console.error(" MongoDB connection error:", err);
   });

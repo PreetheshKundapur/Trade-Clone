@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3002", // backend URL
+  baseURL: "https://trade-clone-3.onrender.com", // backend URL
   withCredentials: true,            // important if backend uses cookies
 });
 
